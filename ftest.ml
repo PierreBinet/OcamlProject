@@ -1,9 +1,12 @@
 open Graph
 open Gfile
+let testgraph = (add_node (add_node (add_node empty_graph "n1") "n2") "n3");;
+let testgraph2 = (add_arc (add_arc (add_arc (add_arc testgraph "n1" "n2" "a12") "n2" "n1" "a21")"n2" "n3" "a23") "n1" "n3" "a13");;
 
-let () =
+let f x = "x";;
+map testgraph2 f;;
 
-  if Array.length Sys.argv <> 5 then
+ (* if Array.length Sys.argv <> 5 then
     begin
       Printf.printf "\nUsage: %s infile source sink outfile\n\n%!" Sys.argv.(0) ;
       exit 0
@@ -23,12 +26,13 @@ let () =
   (* Rewrite the graph that has been read. *)
   let () = Gfile.export outfile graph in
 
-  ()
-
+  ()*)
 (*
 let testgraph = (add_node (add_node (add_node empty_graph "n1") "n2") "n3");;
 let testgraph2 = (add_arc (add_arc (add_arc (add_arc testgraph "n1" "n2" "a12") "n2" "n1" "a21") "n2" "n3" "a23") "n1" "n3" "a13");;
 
 export "~/Documents/4A/Ocaml/Project/dot_out" testgraph;;
 export "~/Documents/4A/Ocaml/Project/dot_out2" testgraph2;;
+
+
 *)
