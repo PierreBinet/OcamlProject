@@ -24,12 +24,11 @@ let () =
   let () = Gfile.export outfile graph in
 
   ()
+
 (*
 let testgraph = (add_node (add_node (add_node empty_graph "n1") "n2") "n3");;
 let testgraph2 = (add_arc (add_arc (add_arc (add_arc testgraph "n1" "n2" "a12") "n2" "n1" "a21") "n2" "n3" "a23") "n1" "n3" "a13");;
 
 export "~/Documents/4A/Ocaml/Project/dot_out" testgraph;;
 export "~/Documents/4A/Ocaml/Project/dot_out2" testgraph2;;
-
-
 *)
