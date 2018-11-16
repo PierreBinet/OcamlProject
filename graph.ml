@@ -49,5 +49,3 @@ let rec map gr f = match gr with
   |[] -> []
   |(x,y)::rest -> (x, aux y f)::(map rest f);;
 
-let convFlow x = (0, int_of_string x);;
-
