@@ -3,9 +3,7 @@ open Gfile
 
 
 (* ######## THE LE MAIN ######### *)
-
-let f x = "x";;
-map testgraph2 f;;
+let () =
 
 if Array.length Sys.argv <> 5 then
   begin
@@ -22,11 +20,14 @@ in
 
 (* Open file *)
 let graph = Gfile.from_file infile in
+let int_graph = Graph.map graph int_of_string in
 
+
+let listpath = Ford.find_path int_graph "0" "5" [] in ()
 (* Rewrite the graph that has been read. *)
-let () = Gfile.export outfile graph in
+                 (* let () = Gfile.export outfile graph in 
 
-()
+                 ()*)
 
 
 
