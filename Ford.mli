@@ -1,14 +1,13 @@
 open Graph
 open Gfile
 open Printf
-    
-type path = string
+   
 
 (*******************  Flow Graph  *******************)
 val convFlow: string -> int * int
 
 (* A path is a list of nodes. *)
-type pathlist = id list
+(*type pathlist = id list*)
 
 (* find_path gr forbidden id1 id2 
  *   returns None if no path can be found.
@@ -16,4 +15,4 @@ type pathlist = id list
  *
  *  forbidden is a list of forbidden nodes (they have already been visited)
  *)
-val find_path: int graph -> id list -> id -> id -> pathlist option
+val find_path: int graph -> id list -> id -> id -> id list

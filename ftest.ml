@@ -1,5 +1,6 @@
 open Graph
 open Gfile
+open Ford
 
 
 (* ######## THE LE MAIN ######### *)
@@ -23,11 +24,12 @@ let graph = Gfile.from_file infile in
 let int_graph = Graph.map graph int_of_string in
 
 
-let listpath = Ford.find_path int_graph "0" "5" [] in ()
+let listpath = Ford.find_path int_graph [] source target in
+List.iter (Printf.printf "%s\n") listpath ;;
 (* Rewrite the graph that has been read. *)
-                 (* let () = Gfile.export outfile graph in 
+(* let () = Gfile.export outfile graph in 
 
-                 ()*)
+()*)
 
 
 
