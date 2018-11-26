@@ -43,6 +43,6 @@ export "~/Documents/4A/Ocaml/Project/dot_out2" testgraph2;;
 
 (* ######## Previous map debug ######### *)
 (* 
-let f x = "x";;
+let f x = int_of_string x;;
 map testgraph2 f;;
 *)
