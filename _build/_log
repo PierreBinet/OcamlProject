@@ -16,10 +16,8 @@
 # Target: ftest.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:ftest.cmo, file:ftest.ml, implem, ocaml, quiet }
 /home/commetud/GEI/OCaml/.opam/4.04.2/bin/ocamlc.opt -c -o ftest.cmo ftest.ml
 + /home/commetud/GEI/OCaml/.opam/4.04.2/bin/ocamlc.opt -c -o ftest.cmo ftest.ml
-File "ftest.ml", line 18, characters 4-10:
-Warning 26: unused variable source.
-File "ftest.ml", line 19, characters 4-10:
-Warning 26: unused variable target.
+File "ftest.ml", line 16, characters 4-11:
+Warning 26: unused variable outfile.
 # Target: Ford.ml.depends, tags: { extension:ml, file:Ford.ml, ocaml, ocamldep, quiet }
 /home/commetud/GEI/OCaml/.opam/4.04.2/bin/ocamldep.opt -modules Ford.ml > Ford.ml.depends
 # Target: gfile.ml.depends, tags: { extension:ml, file:gfile.ml, ocaml, ocamldep, quiet }
