@@ -21,6 +21,11 @@ in
 
 (* Open file *)
 let graph = Gfile.from_file infile in
+
+(* Test find_path *)
+
+(*
+let graph = Gfile.from_file infile in
 let int_graph = Graph.map graph int_of_string in
 
 let listpath = Ford.find_path int_graph [] source target in
@@ -28,11 +33,12 @@ let rec print_listpath listpath txt= match listpath with
 	|[]-> txt
 	|(x,lbl)::rest-> txt^"noeud "^x^", cout "^(string_of_int lbl)^"\n\n"^(print_listpath rest txt)
 in Printf.printf "%s\n" (print_listpath listpath "");;
+*)
 
-(* Rewrite the graph that has been read. *)
-(* let () = Gfile.export outfile graph in 
-
-()*)
+(* Export *)
+let () = Gfile.export outfile graph in 
+(* note that this is the terminal command to be used to export the dot file in png : dot -Tpng your-dot-file > some-output-file *)
+()
 
 
 
@@ -47,6 +53,7 @@ export "~/Documents/4A/Ocaml/Project/dot_out2" testgraph2;;
 *)
 
 (* ######## Previous map debug ######### *)
+
 (* 
 let f x = int_of_string x;;
 map testgraph2 f;;

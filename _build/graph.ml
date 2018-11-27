@@ -17,8 +17,8 @@ let out_arcs gr id =
 
 let find_arc gr id1 id2 =
   let out = out_arcs gr id1 in
-  try Some (List.assoc id2 out)
-  with Not_found -> None
+    try Some (List.assoc id2 out)
+    with Not_found -> None
 
 let add_node gr id =
   if node_exists gr id then raise (Graph_error ("Node " ^ id ^ " already exists in the graph."))
@@ -32,10 +32,10 @@ let add_arc gr id1 id2 lbl =
   (* Update out-arcs.
    * remove_assoc does not fail if id2 is not bound.  *)
   let outb = (id2, lbl) :: List.remove_assoc id2 outa in
-  
+
   (* Replace out-arcs in the graph. *)
   let gr2 = List.remove_assoc id1 gr in
-  (id1, outb) :: gr2
+    (id1, outb) :: gr2
 
 let v_iter gr f = List.iter (fun (id, out) -> f id out) gr
 
@@ -48,6 +48,6 @@ let rec aux arc f = match arc with
 let rec map gr f = match gr with
   |[] -> []
   |(x,y)::rest -> (x, aux y f)::(map rest f);;
-    
 
-
+(*let testgraph = (add_node (add_node (add_node (add_node empty_graph "n1") "n2") "n3")"n4");;
+  let testgraph2 =(add_arc (add_arc (add_arc (add_arc testgraph "n1" "n2" 5) "n2" "n3" 4) "n3" "n4" 6) "n1" "n3" 8);;*)
