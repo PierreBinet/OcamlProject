@@ -15,4 +15,4 @@ val convFlow: string -> int * int
  *
  *  forbidden is a list of forbidden nodes (they have already been visited)
  *)
-val find_path: int graph -> id list -> id -> id -> id list
+val find_path: int graph -> (id*int) list -> id -> id -> (id*int) list

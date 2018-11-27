@@ -50,4 +50,4 @@ let rec map gr f = match gr with
   |(x,y)::rest -> (x, aux y f)::(map rest f);;
 
 (*let testgraph = (add_node (add_node (add_node (add_node empty_graph "n1") "n2") "n3")"n4");;
-let testgraph2 =(add_arc (add_arc (add_arc (add_arc testgraph "n1" "n2" 5) "n2" "n3" 4) "n3" "n4" 6) "n1" "n3" 8);;*)
+  let testgraph2 =(add_arc (add_arc (add_arc (add_arc testgraph "n1" "n2" 5) "n2" "n3" 4) "n3" "n4" 6) "n1" "n3" 8);;*)

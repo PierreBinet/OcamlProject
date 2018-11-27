@@ -23,9 +23,12 @@ in
 let graph = Gfile.from_file infile in
 let int_graph = Graph.map graph int_of_string in
 
-
 let listpath = Ford.find_path int_graph [] source target in
-List.iter (Printf.printf "%s\n") listpath ;;
+let rec print_listpath listpath txt= match listpath with
+	|[]-> txt
+	|(x,lbl)::rest-> txt^"noeud "^x^", cout "^(string_of_int lbl)^"\n\n"^(print_listpath rest txt)
+in Printf.printf "%s\n" (print_listpath listpath "");;
+
 (* Rewrite the graph that has been read. *)
 (* let () = Gfile.export outfile graph in 
 
