@@ -19,4 +19,16 @@ let rec find_path (gr: int graph) (visited: (id*int) list) (id1:id) (id2:id) =
   in
     path_aux (out_arcs gr id1);;
 
-(*let rec Ford_Fulkerson (gr: int graph) (visited: id list) (id1:id) (id2:id) =*)
+(*
+let rec ford_fulkerson (gr: int graph) (id1:id) (id2:id) =
+	let rec appel_rec_find_path = function
+		visited = (find_path gr [] id1 id2)
+		gr = 
+*)
+
+let rec cout_min (l : (id*int) list)->(i : int);; (*le min doit etre positive*)
+let rec sub_arc (l : (id*int) list) ->((l : (id*int) list) );; (*listpath = newlistpath, avec maj du coup des arcs : newcout=oldcout-coutmin*)
+let graph_inv (gr) ->(gr) (*nouveau graph : ajout de tous les inv_graph initialisé à cout 0*)
+let create_graph_flow (gr) -> (gr);; (*graph de retour avec cout en format tuple (flot,capa), avec flot initialisé a 0*)
+
+
