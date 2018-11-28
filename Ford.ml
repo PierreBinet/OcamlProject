@@ -7,15 +7,15 @@ let rec find_path (gr: int graph) (visited: (id*int) list) (id1:id) (id2:id) =
   let rec path_aux = function
     |[] -> []
     |(x,y)::rest-> 
-        if (x == id2)
+        if (x = id2)
         then (List.append visited [(x, y)])
-        else if (List.exists (fun (a,_) -> if a=x then true else false) visited)
+        else if (List.exists (fun (a,_) -> a=x) visited)
         then 
           path_aux rest
         else 
-        	if ((find_path gr (List.append visited [(x,y)] ) x id2) != [])
-			then (find_path gr (List.append visited [(x,y)]) x id2)
-			else path_aux rest
+        	match (find_path gr (List.append visited [(x,y)] ) x id2) with
+				|[] -> path_aux rest
+				|l -> l 
   in
     path_aux (out_arcs gr id1);;
 
