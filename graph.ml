@@ -35,7 +35,22 @@ let add_arc gr id1 id2 lbl =
 
   (* Replace out-arcs in the graph. *)
   let gr2 = List.remove_assoc id1 gr in
-    (id1, outb) :: gr2
+	((id1, outb) :: gr2)
+
+let add_int_arc gr id1 id2 lbl =
+
+  (* Existing out-arcs *)
+  let outa = out_arcs gr id1 in
+
+  (* Update out-arcs.
+   * remove_assoc does not fail if id2 is not bound.  *)
+  let outb = (id2, lbl) :: List.remove_assoc id2 outa in
+
+  (* Replace out-arcs in the graph. *)
+  let gr2 = List.remove_assoc id1 gr in
+	match lbl with
+		|0 -> ((id1, List.remove_assoc id2 outa) :: gr2)
+		|x ->((id1, outb) :: gr2)
 
 let v_iter gr f = List.iter (fun (id, out) -> f id out) gr
 

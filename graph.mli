@@ -21,6 +21,8 @@ val add_node: 'a graph -> id -> 'a graph
  * If an arc already exists between id1 and id2, its label is replaced by lbl. 
  * @raise Graph_error if id1 or id2 does not exist in the graph. *)
 val add_arc: 'a graph -> id -> id -> 'a -> 'a graph
+(*idem que add_arc mais supprime arc si lbl=0*)
+val add_int_arc: int graph -> id -> id -> int -> int graph
 
 
 (**************  GETTERS  *****************)

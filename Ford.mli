@@ -4,8 +4,6 @@ open Printf
    
 
 (*******************  Flow Graph  *******************)
-val convFlow: string -> int * int
-
 (* A path is a list of nodes. *)
 (*type pathlist = id list*)
 
@@ -19,4 +17,15 @@ val find_path: int graph -> (id*int) list -> id -> id -> (id*int) list
 
 val cout_min: (id*int) list -> int
 
-val init_flow: int graph -> (int*int) graph
+val conv_flow: int graph -> (int*int) graph
+
+val aux1: int option -> int
+
+val maj_inv_arc: int graph -> id -> id -> (id*int) list -> (id*int) list -> int graph
+
+val maj_path: int graph -> (id*int) list -> id -> int graph
+
+val maj_flow_path: int graph -> (id*int) list -> id -> int graph
+
+val ford_fulkerson: int graph -> id -> id -> int graph
+
