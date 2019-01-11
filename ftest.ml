@@ -3,7 +3,7 @@ open Gfile
 open Ford
 
 
-(* ######## THE LE MAIN ######### *)
+(* ######## MAIN ######### *)
 let () =
 
 if Array.length Sys.argv <> 5 then
