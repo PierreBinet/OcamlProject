@@ -42,7 +42,7 @@ let () = Gfile.export outfile string_graph in
 ()
  ######## *)
 
-(* ######## test maj_path (Export in dot) ######### 
+(* ######## test maj_path (Export in dot) ######### *)
 (* Open file *)
 let graph = Gfile.from_file infile in
 let int_graph = Graph.map graph int_of_string in
@@ -55,9 +55,10 @@ let rec print_listpath listpath = match listpath with
 	|[]-> ""
 	|(x,lbl)::rest-> "noeud "^x^", cout "^(string_of_int lbl)^"\n\n"^(print_listpath rest)
 in Printf.printf "%s ------------\n cout_min : %d \n%!" (print_listpath listpath) (cout_min listpath);;
- ######## *)
+		
+(* ######## *)
 
-(* ######## test ford_fulkerson (Export in dot) ######### *)
+(* ######## test ford_fulkerson (Export in dot) ######### 
 (* Open file *)
 let graph = Gfile.from_file infile in
 let int_graph = Graph.map graph int_of_string in
@@ -70,7 +71,7 @@ let rec print_listpath listpath = match listpath with
 	|[]-> ""
 	|(x,lbl)::rest-> "noeud "^x^", cout "^(string_of_int lbl)^"\n\n"^(print_listpath rest)
 in Printf.printf "%s ------------\n cout_min : %d \n%!" (print_listpath listpath) (cout_min listpath);;
-(* ######## *)
+ ######## *)
 
 (* ######## Export in dot ######### 
 (* Open file *)
