@@ -3,7 +3,7 @@ open Gfile
 open Ford
 
 
-(* ######## MAIN ######### *)
+(********** MAIN **********)
 let () =
 
 if Array.length Sys.argv <> 5 then
@@ -19,7 +19,8 @@ and source = Sys.argv.(2)
 and target = Sys.argv.(3)
 in
 
-(* ####### Test find_path ####### 
+(******* Test find_path *******) 
+(* ####### Unused for now
 (* Open file *)
 let graph = Gfile.from_file infile in
 let int_graph = Graph.map graph int_of_string in
@@ -31,7 +32,8 @@ let rec print_listpath listpath = match listpath with
 in Printf.printf "%s ------------\n cout_min : %d \n%!" (print_listpath listpath) (cout_min listpath);;
  ######## *)
 
-(* ######## test conv_flow (Export in dot) ######### 
+(******* test conv_flow (Export in dot) *******)
+(* ####### Unused for now
 (* Open file *)
 let graph = Gfile.from_file infile in
 let int_graph = Graph.map graph int_of_string in
@@ -42,7 +44,8 @@ let () = Gfile.export outfile string_graph in
 ()
  ######## *)
 
-(* ######## test maj_path (Export in dot) ######### 
+(******* test maj_path (Export in dot) *******)
+(* ####### Unused for now
 (* Open file *)
 let graph = Gfile.from_file infile in
 let int_graph = Graph.map graph int_of_string in
@@ -57,7 +60,7 @@ let rec print_listpath listpath = match listpath with
 in Printf.printf "%s ------------\n cout_min : %d \n%!" (print_listpath listpath) (cout_min listpath);;
  ######## *)
 
-(* ######## test ford_fulkerson (Export in dot) ######### *)
+(******* test ford_fulkerson (Export in dot) *******)
 (* Open file *)
 let graph = Gfile.from_file infile in
 let int_graph = Graph.map graph int_of_string in
@@ -72,7 +75,8 @@ let rec print_listpath listpath = match listpath with
 in Printf.printf "%s ------------\n cout_min : %d \n%!" (print_listpath listpath) (cout_min listpath);;
 (* ######## *)
 
-(* ######## Export in dot ######### 
+(******* Export in dot *******)
+(* ####### Unused for now
 (* Open file *)
 let graph = Gfile.from_file infile in
 let () = Gfile.export outfile graph in 
@@ -81,8 +85,8 @@ let () = Gfile.export outfile graph in
  ######## *)
 
 
-(* ######## Previous export debug ######### 
-
+(******* Previous export debug *******)
+(* ####### Unused for now
 let testgraph = (add_node (add_node (add_node empty_graph "n1") "n2") "n3");;
 let testgraph2 = (add_arc (add_arc (add_arc (add_arc testgraph "n1" "n2" "a12") "n2" "n1" "a21") "n2" "n3" "a23") "n1" "n3" "a13");;
 export "~/Documents/4A/Ocaml/Project/dot_out" testgraph;;
@@ -90,8 +94,8 @@ export "~/Documents/4A/Ocaml/Project/dot_out2" testgraph2;;
  ######## *)
 
 
-(* ######## Previous map debug ######### 
-
+(******* Previous map debug *******)
+(* ####### Unused for now
 let f x = int_of_string x;;
 map testgraph2 f;;
  ######## *)
