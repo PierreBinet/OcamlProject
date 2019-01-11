@@ -23,11 +23,11 @@ val conv_flow: int graph -> (int*int) graph
 (*maybe aux1 shouldn't be public ?*)
 val aux1: int option -> int
 
-val maj_inv_arc: int graph -> id -> id -> (id*int) list -> (id*int) list -> int graph
+val maj_inv_arc: int graph -> id -> id -> (id*int) list -> (id*int) list -> int -> int graph
 
-val maj_path: int graph -> (id*int) list -> id -> int graph
+val maj_path: int graph -> (id*int) list -> id -> int-> int graph
 
-val maj_flow_path: int graph -> (id*int) list -> id -> int graph
+val maj_flow_path: int graph -> (id*int) list -> id -> int-> int graph
 
 val ford_fulkerson: int graph -> id -> id -> int graph
 

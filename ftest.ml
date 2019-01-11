@@ -6,7 +6,7 @@ open Ford
 (********** MAIN **********)
 let () =
 
-(* if Array.length Sys.argv <> 5 then
+if Array.length Sys.argv <> 5 then
   begin
     Printf.printf "\nUsage: %s infile source target outfile\n\n%!" Sys.argv.(0) ;
     exit 0
@@ -17,7 +17,7 @@ and outfile = Sys.argv.(4)
 
 and source = Sys.argv.(2)
 and target = Sys.argv.(3)
-in *)
+in
 
 (******* Test find_path *******) 
 (* ####### Unused for now
@@ -32,7 +32,7 @@ let rec print_listpath listpath = match listpath with
 in Printf.printf "%s ------------\n cout_min : %d \n%!" (print_listpath listpath) (cout_min listpath);;
  ######## *)
 
-(******* test conv_flow (Export in dot) *******)
+(******* test conversion graph in flow graph : conv_flow (Export in dot) *******)
 (* ####### Unused for now
 (* Open file *)
 let graph = Gfile.from_file infile in
@@ -45,12 +45,13 @@ let () = Gfile.export outfile string_graph in
  ######## *)
 
 (******* test maj_path (Export in dot) *******)
-(* ####### Unused for now
-(* Open file *)
+(* ####### Unused for now *)
+(* Open file 
 let graph = Gfile.from_file infile in
 let int_graph = Graph.map graph int_of_string in
 let listpath = Ford.find_path int_graph [] source target in
-let test_graph = maj_path int_graph listpath source in
+let coutmin = Ford.cout_min listpath in
+let test_graph = maj_path int_graph listpath source coutmin in
 let string_graph = Graph.map test_graph string_of_int in
 let () = Gfile.export outfile string_graph in 
 (* note that this is the terminal command to be used to export the dot file in png : dot -Tpng your-dot-file > some-output-file *)
@@ -64,9 +65,9 @@ in Printf.printf "%s ------------\n cout_min : %d \n%!" (print_listpath listpath
 
 
 (******* test ford_fulkerson (Export in dot) *******)
-(* ########
+(* ######## *)
 (* Open file *)
-(*let graph = Gfile.from_file infile in
+let graph = Gfile.from_file infile in
 let int_graph = Graph.map graph int_of_string in
 let ford_fulk_graph = ford_fulkerson int_graph source target in
 let listpath = Ford.find_path int_graph [] source target in
@@ -77,15 +78,15 @@ let rec print_listpath listpath = match listpath with
 	|[]-> ""
 	|(x,lbl)::rest-> "noeud "^x^", cout "^(string_of_int lbl)^"\n\n"^(print_listpath rest)
 in Printf.printf "%s ------------\n cout_min : %d \n%!" (print_listpath listpath) (cout_min listpath);;
- ######## *)
+(* ######## *)
 
 (******* Export in dot *******)
-(* ####### Unused for now
-(* Open file *)
+(* ####### Unused for now *)
+(* Open file 
 let graph = Gfile.from_file infile in
 let () = Gfile.export outfile graph in 
-(* note that this is the terminal command to be used to export the dot file in png : dot -Tpng your-dot-file > some-output-file *)
 ()
+(* note that this is the terminal command to be used to export the dot file in png : dot -Tpng your-dot-file > some-output-file *)
  ######## *)
 
 
