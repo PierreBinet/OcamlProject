@@ -1,0 +1,86 @@
+== A Line stations, from Balma-Gramont to Basso-Combo
+
+v 0 ==Balma-Gramont
+v 1 ==Argoulet
+v 2 ==Roseraie
+v 3 ==Jolimont
+v 4 ==Marengo-SCNF
+v 5 ==Jean-Jaurès, transfer with line B
+v 6 ==Capitole
+v 7 ==Esquirol
+v 8 ==Saint-Cyprien Republique
+v 9 ==Patte-d'Oie
+v 10 ==Arenes
+v 11 ==Fontaine-Lestang
+v 12 ==Mermoz
+v 13 ==Bagatelle
+v 14 ==Mirail-Universite
+v 15 ==Reynerie
+v 16 ==Bellefontaine
+v 17 ==Basso-Cambo
+
+==B Line stations, from Borderouge to Ramonville
+
+v 18 ==Borderouge
+v 19 ==Trois Cocus
+v 20 ==La Vache
+v 21 ==Barriere de Paris
+v 22 ==Minimes-Claude Nougaro
+v 23 ==Canal du Midi
+v 24 ==Compans Caffarelli
+v 25 ==Jeannes d'Arc
+==Jean Jaures, already listed, tranfer with line A
+v 26 ==Francois Verdier
+v 27 ==Carmes
+v 28 ==Palais de Justice
+v 29 ==St Michel-Marcel Langer
+v 30 ==Empalot
+v 31 ==Saint-Agne-SNCF
+v 32 ==Saouzelong
+v 33 ==Rangueil
+v 34 ==Faculte de Pharmacie
+v 35 ==Universite Paul Sabatier
+v 36 ==Ramonville
+
+==A Line trajectory
+
+e "" 0 1
+e "" 1 2
+e "" 2 3
+e "" 3 4
+e "" 4 5
+e "" 5 6
+e "" 6 7
+e "" 7 8
+e "" 8 9
+e "" 9 10
+e "" 10 11
+e "" 11 12
+e "" 12 13
+e "" 13 14
+e "" 14 15
+e "" 15 16
+e "" 16 17
+
+==B Line trajectory
+e "" 18 19
+e "" 19 20
+e "" 20 21
+e "" 21 22
+e "" 22 23
+e "" 23 24
+e "" 24 25
+e "" 25 5
+e "" 5 26
+e "" 26 27
+e "" 27 28
+e "" 28 29
+e "" 29 30
+e "" 30 31
+e "" 31 32
+e "" 32 33
+e "" 33 34
+e "" 34 35
+e "" 35 36
+
+
