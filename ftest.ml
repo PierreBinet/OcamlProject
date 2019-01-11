@@ -100,8 +100,8 @@ let f x = int_of_string x;;
 map testgraph2 f;;
  ######## *)
 
-(******* Application to a real-world Problem: Toulouse Metro ******)
-
+(******* Application to a real-world Problem: Toulouse Metro (currently being implemented) ******)
+(* ####### Uncomment if needed
 Printf.printf "\nChoose a source station, a target station by typing in their number, and an output file\n
 A Line stations, from Balma-Gramont to Basso-Combo\n
 0 Balma-Gramont
@@ -160,3 +160,4 @@ in
 let graph = Gfile.from_file infile in
 let () = Gfile.export outfile graph in
 ();;
+######## *)
