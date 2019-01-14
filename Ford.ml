@@ -55,22 +55,6 @@ let rec maj_path gr listpath id1 coutmin=
     |(node,lbl)::rest-> maj_path ( maj_inv_arc gr id1 node listpath (out_arcs gr id1) coutmin) rest node coutmin
 ;;
 
-(*mise a jour du graphe de flot*)
-(*let rec maj_flow_path_aux gr listpath id1= 
-  match listpath with
-  |[] -> gr
-  |(n,lbl)::next-> maj_flow_path_aux (rm_arc (rm_arc gr n node) node n) (add_arc gr2 n node ((string_of_int (aux1 (find_arc gr n node)))^"/"^((string_of_int ((aux1 (find_arc gr n node))+lbl))))) rest node
-
-
-  let rec maj_flow_path gr id1 id2 =
-  let listinit = [] in
-  let a = (find_path gr listinit id1 id2)	in
-  match a with
-  |[]->gr
-  |x::xs-> maj_flow_path (maj_flow_path_aux gr a id1 ) id1 id2
-*)
-
-
 (*algorithme final*)
 let ford_fulkerson gr id1 id2=
   let gr_init = gr in
