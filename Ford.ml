@@ -1,6 +1,6 @@
-
 open Graph
 open Gfile
+
 
 (*trouve un path entre deux noeuds*)
 let rec find_path (gr: int graph) (visited: (id*int) list) (id1:id) (id2:id) =
@@ -55,34 +55,32 @@ let rec maj_path gr listpath id1 coutmin=
     |(node,lbl)::rest-> maj_path ( maj_inv_arc gr id1 node listpath (out_arcs gr id1) coutmin) rest node coutmin
 ;;
 
-let rm_arc (gr: 'a graph) id1 id2 =
+(*mise a jour du graphe de flot*)
+(*let rec maj_flow_path_aux gr listpath id1= 
+  match listpath with
+  |[] -> gr
+  |(n,lbl)::next-> maj_flow_path_aux (rm_arc (rm_arc gr n node) node n) (add_arc gr2 n node ((string_of_int (aux1 (find_arc gr n node)))^"/"^((string_of_int ((aux1 (find_arc gr n node))+lbl))))) rest node
 
-  (* Existing out-arcs *)
-  let outa = out_arcs gr id1 in
 
-  (* Replace out-arcs in the graph. *)
-  let gr2 = List.remove_assoc id1 gr in
-	((id1, List.remove_assoc id2 outa) :: gr2)
+  let rec maj_flow_path gr id1 id2 =
+  let listinit = [] in
+  let a = (find_path gr listinit id1 id2)	in
+  match a with
+  |[]->gr
+  |x::xs-> maj_flow_path (maj_flow_path_aux gr a id1 ) id1 id2
+*)
 
-;;
-
-(*mise a jour du graph de flot*)
-let rec maj_flow_path (gr: int graph) gr2= 
-  match gr with
-    |empty_graph->gr
-    |(node,(arclist: (id * int out_arcs) list))::rest-> match arclist with
-																			|[]-> maj_flow_path rest gr2
-																			|(n,lbl)::next-> maj_flow_path (rm_arc (rm_arc gr n node) node n) (add_arc gr2 n node ((String_of_int (aux1 (find_arc gr n node)))^"/"^((String_of_int ((aux1 (find_arc gr n node))+lbl)))))
-
-;;
 
 (*algorithme final*)
-let rec ford_fulkerson gr id1 id2 =
-  let listinit = []
-  in
-		let a = (find_path gr listinit id1 id2)
-		in
-			match a with
-				|[]->gr
-				|x::xs-> ford_fulkerson (maj_path gr a id1 (cout_min a)) id1 id2
+let ford_fulkerson gr id1 id2=
+  let gr_init = gr in
+  let rec ford_fulkerson_aux gr id1 id2 =
+    let listinit = [] in
+    let a = (find_path gr listinit id1 id2) in
+      match a with
+        |[]->gr
+        |x::xs-> ford_fulkerson_aux (maj_path gr a id1 (cout_min a)) id1 id2
+  in maj_flow_path (ford_fulkerson_aux gr id1 id2) (ford_fulkerson_aux gr id1 id2) gr_init (Graph.map gr_init (function x -> (string_of_int x)^"/"^(string_of_int x)))
+
+
 

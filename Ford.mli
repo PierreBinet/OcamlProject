@@ -27,9 +27,5 @@ val maj_inv_arc: int graph -> id -> id -> (id*int) list -> (id*int) list -> int 
 
 val maj_path: int graph -> (id*int) list -> id -> int-> int graph
 
-val rm_arc:'a graph -> id -> id -> 'a graph
-
-val maj_flow_path: int graph -> string graph -> string graph
-
-val ford_fulkerson: int graph -> id -> id -> int graph
+val ford_fulkerson: int graph -> id -> id -> string graph
 

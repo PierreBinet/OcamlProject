@@ -24,6 +24,8 @@ val add_arc: 'a graph -> id -> id -> 'a -> 'a graph
 (*idem que add_arc mais supprime arc si lbl=0*)
 val add_int_arc: int graph -> id -> id -> int -> int graph
 
+val rm_arc:'a graph -> id -> id -> 'a graph
+
 
 (**************  GETTERS  *****************)
 
@@ -55,6 +57,9 @@ val v_fold: 'a graph -> ('b -> id -> 'a out_arcs -> 'b) -> 'b -> 'b
 (* maps all arcs of the graph
  * Nodes keep the same identifiers. *)
 val map: 'a graph -> ('a -> 'b) -> 'b graph
+
+val maj_flow_path: int graph -> int graph -> int graph -> string graph -> string graph
+
 
 
 
